@@ -1,17 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import FrontInfo from '../components/FrontIntro'
+import AllQuestions from '../components/AllQuestions'
+import '../css/index.css'
 
 
 export default function FrontPage() {
 
-  // const =[search, setSearch]= useState();
-
-
-
   return (
     <>
       <FrontInfo />
+      <AllQuestions />
     </>
   )
-
 }

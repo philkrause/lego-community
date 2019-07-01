@@ -1,29 +1,30 @@
-// using System.Collections.Generic;
-// using System.Linq;
-// using Microsoft.AspNetCore.Mvc;
-// using stackflow;
-// using stackflow.Models;
-// using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using stackflow;
+using stackflow.Models;
+using Microsoft.EntityFrameworkCore;
 
 
-// namespace stackflow.Controllers
-// {
+namespace stackflow.Controllers
+{
 
-//   [ApiController]
-//   [Route("api/[controller]")]
+  [ApiController]
+  [Route("api/[controller]")]
 
-//   public class AnswerController : ControllerBase
-//   {
+  public class AnswerController : ControllerBase
+  {
 
-//     [HttpPost("")]
-//     public ActionResult<Answer> Post([FromBody]Answer myanswer)
-//     {
-//       var db = new DatabaseContext();
-//       db.LocationTableName.Add(myLocation);
-//       db.SaveChanges();
-//       return myLocation;
-//     }
+    [HttpPost("question/{questionId}")]
+    public ActionResult<Answer> Post([FromRoute]int questionId, [FromBody]Answer myanswer)
+    {
+      var db = new DatabaseContext();
+      myanswer.QuestionTableId = questionId;
+      db.AnswerTable.Add(myanswer);
+      db.SaveChanges();
+      return myanswer;
+    }
 
-//   }
+  }
 
-// }
+}

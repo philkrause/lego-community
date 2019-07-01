@@ -10,7 +10,9 @@ namespace stackflow.Models
     public string Description { get; set; }
     public int VoteCount { get; set; } = 0;
 
-    public List<Question> QuestionTable { get; set; } = new List<Question>();
+    public int? QuestionTableId { get; set; }
+
+    public Question QuestionTable { get; set; }
 
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import sologo from '../images/so-logo.png'
+import { Link } from 'react-router-dom'
 
 
 export default function Header() {
@@ -9,8 +10,8 @@ export default function Header() {
     <>
 
       <section className='searcharea'>
-        <img className='logo' src={sologo} />
-        <p>Products</p>
+        <Link to={{ pathname: '/' }}> <img className='logo' src={sologo} /></Link>
+        <Link to={{ pathname: '/' }}> <p>Products</p></Link>
         <p>Customers</p>
         <p>Use Cases</p>
         <div>

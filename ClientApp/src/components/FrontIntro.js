@@ -9,7 +9,7 @@ export default function FrontInfo() {
     <section className='introarea'>
       <div className='introtext'>
         <h2>Learn, Share, Build</h2>
-        <p>Each month over 50 million developers come to Stack Overflow to learn, share their knowledge, and build their careers.</p>
+        <p>Each month over 50 million developers come to Stackflow to learn, share their knowledge, and build their careers.</p>
         <p>Join the world's largest developer community</p>
       </div>
       <section className='introlog'>
