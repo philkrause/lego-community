@@ -32,7 +32,6 @@ namespace stackflow.Controllers
     [HttpDelete("delete/{id}")]
     public ActionResult<Question> Delete(int id)
     {
-
       var db = new DatabaseContext();
       var quest = db.QuestionTable.SingleOrDefault(s => s.Id == id);
       if (quest == null)
@@ -45,14 +44,13 @@ namespace stackflow.Controllers
         db.SaveChanges();
         return quest;
       }
-
     }
 
     [HttpGet("all")]
     public ActionResult<List<Question>> GetAll()
     {
       var db = new DatabaseContext();
-      var data = db.QuestionTable;
+      var data = db.QuestionTable.Include(i => i.AnswerTable);
       return data.ToList();
     }
 
@@ -63,10 +61,5 @@ namespace stackflow.Controllers
       var data = db.QuestionTable.FirstOrDefault(f => f.Id == id);
       return data;
     }
-
-
   }
-
-
-
 }

@@ -25,6 +25,14 @@ namespace stackflow.Controllers
       return myanswer;
     }
 
+    [HttpGet("question/{questionId}")]
+    public ActionResult<List<Answer>> Get([FromRoute]int questionId)
+    {
+      var db = new DatabaseContext();
+      var rv = db.AnswerTable.Where(w => w.QuestionTableId == questionId);
+      return rv.ToList();
+    }
+
   }
 
 }
