@@ -11,6 +11,8 @@ namespace stackflow.Models
 
     public int VoteCount { get; set; } = 0;
 
+    public int ViewCount { get; set; } = 0;
+
     public List<Answer> AnswerTable { get; set; } = new List<Answer>();
 
   }

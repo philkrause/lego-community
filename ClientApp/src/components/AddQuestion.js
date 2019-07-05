@@ -8,12 +8,14 @@ export default function AddQuestion() {
   const [description, setDescription] = useState({})
 
   const submitQuestion = () => {
-    axios.post(`/api/Question`, {
+    axios.post(`/api/question`, {
       title: title,
       description: description
     })
       .then((response) => {
-        console.log(response);
+        if (response == 200) {
+          alert("Question Was Submitted")
+        }
       })
       .catch((error) => {
         console.log(error)
@@ -29,7 +31,6 @@ export default function AddQuestion() {
           type='textarea'
           wrap='hard'
           spellCheck='true'
-
           onChange={e => setTitle(e.target.value)}
         />
         <h3>Details</h3>

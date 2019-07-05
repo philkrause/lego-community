@@ -15,24 +15,60 @@ namespace stackflow.Controllers
   public class AnswerController : ControllerBase
   {
 
-    [HttpPost("question/{questionId}")]
-    public ActionResult<Answer> Post([FromRoute]int questionId, [FromBody]Answer myanswer)
+    [HttpPost("{id}")]
+    public ActionResult<Answer> Post([FromRoute]int id, [FromBody]Answer myanswer)
     {
       var db = new DatabaseContext();
-      myanswer.QuestionTableId = questionId;
+      myanswer.QuestionTableId = id;
       db.AnswerTable.Add(myanswer);
       db.SaveChanges();
       return myanswer;
     }
 
-    [HttpGet("question/{questionId}")]
-    public ActionResult<List<Answer>> Get([FromRoute]int questionId)
+    [HttpGet("{id}")]
+    public ActionResult<List<Answer>> Get([FromRoute]int id)
     {
       var db = new DatabaseContext();
-      var rv = db.AnswerTable.Where(w => w.QuestionTableId == questionId);
+      var rt = db.AnswerTable.Where(w => w.QuestionTableId == id);
+      return rt.ToList();
+    }
+
+
+    [HttpGet("{id}/count")]
+    public ActionResult<int> GetQuestionViewCount([FromRoute]int id)
+    {
+      var db = new DatabaseContext();
+      var location = db.QuestionTable.FirstOrDefault(w => w.Id == id);
+      var rt = location.ViewCount;
+      return rt;
+    }
+
+    [HttpPatch("{id}/addview")]
+    public ActionResult<int> UpdateViewCount([FromRoute]int id)
+    {
+      var db = new DatabaseContext();
+      var location = db.QuestionTable.FirstOrDefault(w => w.Id == id);
+      location.ViewCount += 1;
+      db.SaveChanges();
+      return Ok();
+    }
+
+
+
+    // All answers with the question
+    [HttpGet("all")]
+    public ActionResult<List<Answer>> Get()
+    {
+      var db = new DatabaseContext();
+      var rv = db.AnswerTable.Include(i => i.QuestionTable);
       return rv.ToList();
     }
 
+
+
+
+
   }
+
 
 }

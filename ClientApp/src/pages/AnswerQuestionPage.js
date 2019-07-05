@@ -10,6 +10,7 @@ export default function AnswerQuestionPage(props) {
   const [question, setQuestion] = useState({})
   const [answer, setAnswer] = useState({})
   const [answerList, setanswerList] = useState([])
+  const [viewCount, setViewCount] = useState(0)
 
 
   useEffect(() => {
@@ -17,14 +18,16 @@ export default function AnswerQuestionPage(props) {
       setQuestion(resp.data)
       console.log(resp.data)
     }).then(() => {
-      axios.get(`/api/answer/question/${id}`).then(resp => {
+      axios.get(`/api/answer/${id}`).then(resp => {
         setanswerList(resp.data)
+      }).then(() => {
+        axios.patch(`/api/answer/{id}/addview`)
       })
     })
   }, [])
 
   const submitQuestion = () => {
-    axios.post(`/api/answer/question/${id}`, {
+    axios.post(`/api/answer/${id}`, {
       description: answer
     }).then(resp => {
       if (resp.status !== 200) {
@@ -35,7 +38,7 @@ export default function AnswerQuestionPage(props) {
 
   return (
     <>
-      <div className='answer'>
+      <section className='answer-page'>
         <Question
           key={question.id}
           title={question.title}
@@ -48,15 +51,14 @@ export default function AnswerQuestionPage(props) {
             )
           })}
         </div>
-        <h3>Answer</h3>
+        <h3>Submit an Answer</h3>
         <textarea
           className='question-description'
           onChange={e => setAnswer(e.target.value)}
           spellCheck='true'
         />
         <button onClick={submitQuestion}>Submit</button>
-      </div>
+      </section>
     </>
   )
-
 }

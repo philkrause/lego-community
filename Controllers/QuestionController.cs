@@ -61,5 +61,9 @@ namespace stackflow.Controllers
       var data = db.QuestionTable.FirstOrDefault(f => f.Id == id);
       return data;
     }
+
+
+
+
   }
 }

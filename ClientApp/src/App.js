@@ -18,7 +18,7 @@ export default class App extends Component {
           <Switch>
             <Route path='/' exact component={FrontPage} />
             <Route path='/addquestion' exact component={AddQuestion} />
-            <Route path='/answerquestion/:id' exact component={AnswerQuestion} />
+            <Route path='/answer/:id' exact component={AnswerQuestion} />
           </Switch>
         </Router>
       </>
