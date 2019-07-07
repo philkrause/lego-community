@@ -14,7 +14,7 @@ export default function AddProjectPage() {
     axios.post('/api/project/add', project).then(resp => {
       console.log(project)
       if (resp.status == 200) {
-        alert("Your project has been submitted")
+        alert("Thank you for Submitting your Project!")
       } else {
         alert("There was an issue submitting your project. Please try again.")
       }

@@ -1,6 +1,6 @@
 import React from 'react'
 import FrontInfo from '../components/FrontIntro'
-import AllQuestions from '../components/AllQuestions'
+import AllProjects from '../components/AllProjects'
 import '../css/index.css'
 import SideNav from '../components/SideNav'
 
@@ -12,7 +12,7 @@ export default function FrontPage() {
       <section>
         <SideNav />
         <div>
-          <AllQuestions />
+          <AllProjects />
         </div>
       </section>
     </>

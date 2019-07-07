@@ -5,6 +5,7 @@ import FrontPage from './pages/Frontpage'
 import AddQuestion from './pages/AddQuestionPage'
 import AnswerQuestion from './pages/AnswerQuestionPage'
 import AddProjectPage from './pages/AddProjectPage'
+import ProjectPage from './pages/ProjectPage'
 
 
 export default class App extends Component {
@@ -19,7 +20,7 @@ export default class App extends Component {
           <Switch>
             <Route path='/' exact component={FrontPage} />
             <Route path='/addproject' exact component={AddProjectPage} />
-            <Route path='/answer/:id' exact component={AnswerQuestion} />
+            <Route path='/project/:id' exact component={ProjectPage} />
           </Switch>
         </Router>
       </>

@@ -12,7 +12,7 @@ export default function AllQuestions() {
 
 
   useEffect(() => {
-    axios.get('/api/question/all').then(resp => {
+    axios.get('/question/all').then(resp => {
       setQuestions(resp.data)
       console.log(resp.data)
     })
