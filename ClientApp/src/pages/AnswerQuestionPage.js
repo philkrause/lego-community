@@ -5,7 +5,7 @@ import AnswerQuestion from '../components/AddQuestion'
 
 export default function AnswerQuestionPage(props) {
 
-  const id = props.match.params.id
+  const questionId = props.match.params.id
 
   const [question, setQuestion] = useState({})
   const [answer, setAnswer] = useState({})
@@ -14,20 +14,20 @@ export default function AnswerQuestionPage(props) {
 
 
   useEffect(() => {
-    axios.get(`/api/question/${id}`).then(resp => {
+    axios.get(`/api/question/${questionId}`).then(resp => {
       setQuestion(resp.data)
       console.log(resp.data)
     }).then(() => {
-      axios.get(`/api/answer/${id}`).then(resp => {
+      axios.get(`/api/question/${questionId}/answers`).then(resp => {
         setanswerList(resp.data)
       }).then(() => {
-        axios.patch(`/api/answer/{id}/addview`)
+        axios.patch(`/api/question/${questionId}/addview`)
       })
     })
   }, [])
 
   const submitQuestion = () => {
-    axios.post(`/api/answer/${id}`, {
+    axios.post(`/api/answer/${questionId}`, {
       description: answer
     }).then(resp => {
       if (resp.status !== 200) {

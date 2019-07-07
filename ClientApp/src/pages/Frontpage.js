@@ -9,7 +9,7 @@ export default function FrontPage() {
   return (
     <>
       <FrontInfo />
-      <section className='mid-front'>
+      <section>
         <SideNav />
         <div>
           <AllQuestions />

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using stackflow;
@@ -9,9 +10,10 @@ using stackflow;
 namespace sdgreacttemplate.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20190705173003_addingProjectTable")]
+    partial class addingProjectTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,6 +52,8 @@ namespace sdgreacttemplate.Migrations
 
                     b.Property<string>("Designer");
 
+                    b.Property<string>("Dimensions");
+
                     b.Property<string>("ImageUrl");
 
                     b.Property<int>("PieceCount");
@@ -59,8 +63,6 @@ namespace sdgreacttemplate.Migrations
                     b.Property<string>("Theme");
 
                     b.Property<string>("Title");
-
-                    b.Property<string>("VideoUrl");
 
                     b.Property<int>("ViewCount");
 

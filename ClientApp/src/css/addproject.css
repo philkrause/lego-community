@@ -1,0 +1,76 @@
+:root {
+  font: 16px / 1 sans-serif;
+}
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color:rgb(255, 255, 255);
+}
+
+.lego-color{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-top:2rem;
+}
+
+.project-form{
+  display:flex;
+  justify-content: center;  
+  padding-top:3rem;
+}
+input.input-box:focus {
+  outline-width: 0;
+}
+
+.input-box{
+  border-radius:20px;
+  width:20rem;
+  height:3rem;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color:red;
+}
+.input-box:hover{
+  border:solid 5px rgb(144, 197, 255);
+}
+
+.title-box{
+  display:flex;
+  flex-direction:column;
+  padding:2rem 5rem 2rem 5rem;
+  background-color:rgb(255, 208, 0);
+  border:solid 3px rgb(20, 132, 255);
+  border-radius:5px;
+  color:rgb(20, 132, 255);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-align: center;
+  width:85vw;
+}
+
+.title-box h3{
+  width:15rem;
+  color:white;
+  background-color: rgb(95, 124, 255);
+  border-radius:10px
+}
+
+.title-box h3:hover{
+  background-color: rgb(95, 124, 255);
+  border-radius:5px;
+  transform: scale(1.2);
+  color:white;
+}
+
+.title-box div{
+  padding-right:10rem;
+  padding-top:2rem;
+}
+
+.req{
+  color:red;
+
+}

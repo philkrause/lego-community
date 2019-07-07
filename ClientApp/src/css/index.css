@@ -29,7 +29,8 @@ a p:hover{
 }
 .searcharea button{
  border:none;
- border-radius:3px;
+ border-radius:5px;
+ padding:.8rem;
  color:white;
  background: rgb(0,138,255);
  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -97,7 +98,7 @@ padding-right:4rem;
 
 .submit-question h3{
   text-align:center;
-  height:5rem;
+  height:4rem;
   width:6rem;
   color:white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -109,7 +110,7 @@ padding-right:4rem;
   font-variant-ligatures: normal;
   font-weight: normal;
   margin-left: 15rem;
-  padding-top:1.35rem;
+  padding-top:.8rem;
   border-radius:7px;
   background-color:rgb(0, 132, 255);
 }
@@ -122,24 +123,24 @@ padding-right:4rem;
 }
 
 .question-area{
-  border-left: dotted 1px grey;
   margin-left:1rem;
-  width:75vw;
+  margin-top:1rem;
 }
 .question-list{
   display:flex;
   background-color:rgb(255, 208, 0);
+  border:1px solid black;
   border-radius:10px;
-box-shadow: 1px 1px rgb(255, 165, 0)
+  width:75vw;
 }
 
 .question-list a:hover{
-    color: rgb(0, 68, 255);
+  color: rgb(0, 68, 255);
 }
 .question-area h3{
-  color:rgb(0,138,255);
-  padding:1rem 0 0 0;
-  margin-bottom:2rem;
+  color:white;
+  padding:.6rem 0 0 0;
+  margin:.3rem 1rem 2rem 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-kerning: auto;
   font-size: 22px;
@@ -148,7 +149,9 @@ box-shadow: 1px 1px rgb(255, 165, 0)
   font-variant: normal;
   font-variant-ligatures: normal;
   font-weight: normal;
-  border-bottom:solid 1px;
+  background-color:rgb(20, 132, 255);
+  border-radius:5px;
+  text-align:center;
 }
 .question-area h3:hover{
   border-bottom: solid 1px rgb(106, 3, 241);
@@ -158,7 +161,7 @@ box-shadow: 1px 1px rgb(255, 165, 0)
 
 .question-area p{
   text-decoration:none;
-  color:black;
+  color:white;
   padding: 0rem 10rem 0 0;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-kerning: auto;
@@ -276,6 +279,7 @@ box-shadow: 1px 1px rgb(255, 165, 0)
 
 .mid-front{
   display:flex;
+  justify-content: center;
   padding-top:1rem;
 }
 
@@ -316,36 +320,44 @@ box-shadow: 1px 1px rgb(255, 165, 0)
 font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 padding:0;
 margin-top:1rem;
-margin-left: 10rem;
-width:10vw;
 height:4rem;
 display:flex;
 justify-content: space-evenly;
-font-size: 11px;
+font-size: 15px;
 font-stretch: normal;
 font-style: normal;
 font-variant: normal;
 font-variant-ligatures: normal;
 font-weight: normal;
-background-color:rgb(247, 247, 247);
-
+color:rgb(255, 255, 255);
+border-radius:5px;
+background-size: contain;
+/* text-shadow: -1px 0 rgb(255, 208, 0), 0 1px rgb(255, 208, 0), 1px 0 rgb(255, 208, 0), 0 -1px rgb(255, 208, 0); */
 }
 .count :hover{
-  border:solid 1px rgb(6, 255, 6);
+  border:solid 1px rgb(13,138,255);
   }
 
 .vote-count{
   text-align: center;
-  width:3rem;
+  width:6rem;
+  background-color:rgb(13,138,255);
+  border-radius:5px;
+  border:solid 2px black;
 }
-
-
 
 .answers-count{
   text-align: center;
-  width:3rem;
-
-}.view-count{
+  width:6rem;
+  background-color:rgb(0, 190, 25);
+  border:solid 2px black;
+  border-radius:5px;
+}
+.view-count{
   text-align: center;
-  width:3rem;
+  width:6rem;
+  background-color:rgb(0, 190, 25);
+  border-radius:5px;
+  border:solid 2px black;
+
 }

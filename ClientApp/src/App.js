@@ -4,6 +4,7 @@ import Header from './components/Header'
 import FrontPage from './pages/Frontpage'
 import AddQuestion from './pages/AddQuestionPage'
 import AnswerQuestion from './pages/AnswerQuestionPage'
+import AddProjectPage from './pages/AddProjectPage'
 
 
 export default class App extends Component {
@@ -17,7 +18,7 @@ export default class App extends Component {
           <Header />
           <Switch>
             <Route path='/' exact component={FrontPage} />
-            <Route path='/addquestion' exact component={AddQuestion} />
+            <Route path='/addproject' exact component={AddProjectPage} />
             <Route path='/answer/:id' exact component={AnswerQuestion} />
           </Switch>
         </Router>

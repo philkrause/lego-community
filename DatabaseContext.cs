@@ -39,13 +39,12 @@ namespace stackflow
       }
     }
 
-
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
       modelBuilder.HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
     }
     public DbSet<Question> QuestionTable { get; set; }
     public DbSet<Answer> AnswerTable { get; set; }
+    public DbSet<Project> ProjectTable { get; set; }
   }
 }

@@ -34,11 +34,11 @@ namespace stackflow.Controllers
     }
 
 
-    [HttpGet("{id}/count")]
-    public ActionResult<int> GetQuestionViewCount([FromRoute]int id)
+    [HttpGet("{questionId}/count")]
+    public ActionResult<int> GetQuestionViewCount([FromRoute]int questionId)
     {
       var db = new DatabaseContext();
-      var location = db.QuestionTable.FirstOrDefault(w => w.Id == id);
+      var location = db.QuestionTable.FirstOrDefault(w => w.Id == questionId);
       var rt = location.ViewCount;
       return rt;
     }
@@ -64,9 +64,12 @@ namespace stackflow.Controllers
       return rv.ToList();
     }
 
-
-
-
+    //  var answerId = 0;
+    //     var question = db
+    //           .AnswerTable
+    //           .Include(i => i.QuestionTable)
+    //           .FirstOrDefault(f => f.Id == answerId)
+    //           .Select(s => s.QuestionTable);
 
   }
 
