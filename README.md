@@ -1,13 +1,12 @@
-# the calvin and hobbes encyclopedia
-View [Here](https://calvin-and-hobbes-encyclopedia-phil.netlify.com/)
-![](calvandhobbes.gif)
+# LEGO Make Your Own Creation Community
 
-Building a Community a place to share your knowledge, and learn from others.
+![](lego.gif)
 
+Building a Community to share your knowledge, and learn from others.
 
-* Vote on others projects AND learn from how to build them!
+* Submit Your Own Custom Project and the blueprints for others to learn
 
-* Submit Your Own Custom Project
+* Vote on others projects and Shop for your favorite LEGO sets
 
 * Made with [React](https://reactjs.org/) and [Axios](https://github.com/axios/axios)
 
