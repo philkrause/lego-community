@@ -8,8 +8,8 @@ export default function FrontInfo() {
 
     <section className='introarea'>
       <div className='introtext'>
-        <h2>Learn, Share, Build</h2>
-        <p>A place to share your knowledge, and to learn from other how to build your own creation.</p>
+        <h2>Building a Community</h2>
+        <p>A place to share your knowledge, and to learn from others how to build your own creation.</p>
         <p>Join a community where your innovation is supported</p>
       </div>
       <section className='introlog'>

@@ -7,20 +7,20 @@ export default function DataQuestion(props) {
     <>
       <section className='count'>
         <div className='vote-count'>
-          <p>1123</p>
-          <p>piece-count</p>
+          <p>Piece-Count</p>
+          <p>{props.piececount}</p>
         </div>
         <div className='vote-count'>
-          <p>CathyVT</p>
-          <p>designer</p>
+          <p>Designer</p>
+          <p>{props.designer}</p>
         </div>
         <div className='vote-count'>
           <p>{props.votecount}</p>
           <p>votes</p>
         </div>
         <div className='answers-count'>
-          <p>{props.totalanswers}</p>
-          <p>answers</p>
+          <p>0</p>
+          <p>Questions</p>
         </div>
         <div className='view-count'>
           <p>{props.viewcount}</p>

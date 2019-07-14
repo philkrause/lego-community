@@ -27,28 +27,40 @@ export default function AllQuestions() {
           <>
             <section className='mid-front'>
               <div className='question-list'>
-                <div style={{ display: 'flex', marginLeft: '3rem' }}>
-                  <div className='profile'>
-                    <Link to={{ pathname: `/project/${p.id}` }}>
-                      <img src={p.imageUrl} style={{
-                        marginTop: '.8rem', width: '12rem', borderRadius: '5px', border: '2px solid rgb(32, 138, 255)'
-                      }} />
-                    </Link>
+                <div className='profile'>
+                  <Link to={{ pathname: `/project/${p.id}` }}>
+                    <img src={p.imageUrl} style={{
+                      marginTop: '.8rem', width: '30rem', borderRadius: '5px'
+                    }} />
+                  </Link>
+                  <Link to={{ pathname: `/project/${p.id}` }}>
                     <div className='question-area'>
                       <h3>{p.title}</h3>
                     </div>
-                  </div>
-                  <div>
-                    <p style={{ color: 'rgb(12,133,255)', paddingTop: '.3rem', marginLeft: '.8rem' }}>Designer: {p.designer}</p>
-                    <p style={{ color: 'rgb(12,133,255)', marginLeft: '.8rem' }}>Piece-Count: {p.pieceCount}</p>
-                    <p style={{ color: 'rgb(12,133,255)', marginLeft: '.8rem' }}>Instructions: Yes</p>
-                    <DataQuestion
-                      votecount={p.viewCount}
-                      viewcount={p.voteCount}
-                    />
+                  </Link>
+                  <DataQuestion
+                    votecount={p.voteCount}
+                    piececount={p.pieceCount}
+                    designer={p.designer}
+                    viewcount={p.viewCount}
+                  />
+                  <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '20vw', boxShadow: '2px 2px rgb(13,138,255)', borderRadius: '10px' }}>
+                      <b style={{ color: 'rgb(13,138,255)', fontSize: '1.2rem', padding: '0' }}>Designer: </b>
+                      <p style={{ color: 'rgb(13,138,255)', paddingTop: '.3rem' }}> {p.designer}</p>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '20vw', boxShadow: '2px 2px rgb(13,138,255)', borderRadius: '10px' }}>
+                      <b style={{ color: 'rgb(13,138,255)', fontSize: '1.2rem' }}>PieceCount: </b>
+                      <p style={{ color: 'rgb(13,138,255)' }}>{p.pieceCount}</p>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '20vw', boxShadow: '2px 2px rgb(13,138,255)', borderRadius: '10px' }}>
+                      <b style={{ color: 'rgb(13,138,255)', fontSize: '1.2rem' }}>Instructions: </b>
+                      <p style={{ color: 'rgb(13,138,255)' }}>Yes</p>
+                    </div>
                   </div>
                 </div>
               </div>
+
             </section>
           </>
         )
