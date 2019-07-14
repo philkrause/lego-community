@@ -7,7 +7,7 @@ Building a Community to share your knowledge and learn from others.
 * Vote on others projects and Shop for your favorite LEGO sets
 
 
-![](lego.gif)
+![](lego1.gif)
 
 
 * Made with [React](https://reactjs.org/) and [Axios](https://github.com/axios/axios)
