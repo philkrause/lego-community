@@ -10,7 +10,7 @@ Building a Community to share your knowledge and learn from others.
 ![](lego1.gif)
 
 
-* Made with [React](https://reactjs.org/) [C#. Net Core](https://dotnet.microsoft.com)
+* Made with [React](https://reactjs.org/) and [C#. Net Core](https://dotnet.microsoft.com)
 
 
 
